@@ -1,0 +1,50 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #e723bd;
+    overflow: hidden;
+}
+
+
+.barraNav a {
+    float: left;
+    font-size: 16px;
+    color: rgb(168, 47, 47);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.barraNav a:hover {
+    background-color: #595b85;
+    color: rgb(255, 255, 255);
+}
+
+.barraNav h1{
+    color:white;
+    font-size:50px;
+    text-align: center;
+}
+
+footer {
+    background-color: #03203c ;
+    color: #fff;
+    margin:0px;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; 
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer p:hover {
+    text-decoration: underline;
+}
