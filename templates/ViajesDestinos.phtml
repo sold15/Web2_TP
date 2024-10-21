@@ -1,0 +1,38 @@
+<?php require_once 'templates/Header.phtml'; ?>
+
+<?php if ($isAdmin) { ?>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <?php if ($isAdmin) { ?>
+            <a href="<?= BASE_URL . 'FormAgregarViaje/'; ?>" class="btn btn-success btn-sm">Agregar Viaje</a>
+        <?php } ?>
+    </div>
+<?php } ?>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre del Destino</th>
+            <th>Ver Detalle</th>
+            <?php if ($isAdmin) { ?>
+                <th>Opciones</th>
+            <?php } ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($viajes as $viaje) { ?>
+            <tr>
+                <td><?= $viaje->destino; ?></td>
+                <td><a href="<?= BASE_URL . 'ViajeDetalles/' . $viaje->ID_viajes; ?>" class="btn btn-primary btn-sm">Ver Detalle</a></td>
+
+                <?php if ($isAdmin) { ?>
+                    <td>
+                        <a href="<?= BASE_URL . 'FormActualizarViaje/' . $viaje->ID_viajes; ?>" class="btn btn-warning">Editar</a>
+                        <a href="<?= BASE_URL . 'EliminarViaje/' . $viaje->ID_viajes; ?>" class="btn btn-danger">Eliminar</a>
+                    </td>
+                <?php } ?>
+
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+<?php require_once 'templates/Footer.phtml'; ?>
