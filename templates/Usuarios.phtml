@@ -1,0 +1,35 @@
+<?php require_once 'templates/Header.phtml'; ?>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <?php if ($isAdmin) { ?>
+    <a href="<?= BASE_URL . 'FormAgregarUsuario/'; ?>" class="btn btn-success btn-sm">Agregar Usuario</a>
+  <?php } ?>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre del Usuario</th>
+      <th>Ver Detalle</th>
+      <?php if ($isAdmin) { ?>
+        <th>Opciones</th>
+      <?php } ?>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($usuarios as $usuario) { ?>
+      <tr>
+        <td><?= $usuario->nombre; ?></td>
+        <td><a href= "UsuariosDetalles/<?php echo $usuario->id_usuario ?>"class="btn btn-primary btn-sm">Ver Detalle</a> </td>
+        <?php if ($isAdmin) { ?>
+          <td>
+            <a href="<?= BASE_URL . 'FormActualizarUsuario/' . $usuario->id_usuario; ?>" class="btn btn-warning">Editar</a>
+            <a href="<?= BASE_URL . 'EliminarUsuario/' . $usuario->id_usuario; ?>" class="btn btn-danger">Eliminar</a>
+          </td>
+        <?php } ?>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
+
+<?php require_once 'templates/Footer.phtml'; ?>

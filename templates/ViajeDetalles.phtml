@@ -1,0 +1,31 @@
+<?php require_once 'templates/Header.phtml'; ?>
+
+<h2>Viajes</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID Viaje</th>
+            <th>Destino</th>
+            <th>Fecha de Salida</th>
+            <th>Fecha de Regreso</th>
+            <th>ID Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?= $viaje->ID_viajes; ?></td>
+            <td><?= $viaje->destino; ?></td>
+            <td><?= $viaje->salida; ?></td>
+            <td><?= $viaje->regreso; ?></td>
+            <td><?= $viaje->id_usuario; ?></td>
+            <td> <?= $usuario->nombre; ?></td>
+            <td> <?= $usuario->apellido; ?></td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<?php require_once 'templates/Footer.phtml'; ?>

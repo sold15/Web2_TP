@@ -1,0 +1,16 @@
+<?php require_once 'templates/Header.phtml'; ?>
+<form action="AgregarUsuario" method="post">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" required>
+
+    <label class="form-label" for="apellido">Apellido:</label>
+    <input type="text" class="form-control" id="apellido" name="apellido" required>
+
+
+    <label for="gmail">Correo Electronico:</label>
+    <input type="email" class="form-control" id="gmail" name="gmail" required>
+
+    <button class="btn btn-success" type="submit">Agregar usuario</button>
+</form>
+<?php require_once 'templates/Footer.phtml'; ?>

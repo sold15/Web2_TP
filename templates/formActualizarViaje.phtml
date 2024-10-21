@@ -1,0 +1,29 @@
+<?php require_once 'templates/Header.phtml'; ?>
+
+<form action="ActualizarViaje/<?= $viaje->ID_viajes; ?>" method="POST">
+    <div>
+        <label for="destino">Destino:</label>
+        <input type="text" class="form-control" id="destino" name="destino" value="<?= $viaje->destino; ?>">
+    </div>
+    <div>
+        <label class="form-label" for="salida">Fecha de Salida:</label>
+        <input type="date" class="form-control" id="salida" name="salida" value="<?= $viaje->salida; ?>" required>
+    </div>
+    <div>
+        <label for="regreso">Fecha de Regreso:</label>
+        <input type="date" class="form-control" id="regreso" name="regreso" value="<?= $viaje->regreso; ?>" required>
+    </div>
+    <div>
+        <label class="form-label" for="usuario">usuario:</label>
+        <select class="form-control" id="usuario" name="usuario" required>
+            <?php foreach ($usuarios as $usuario) { ?>
+                <option value="<?= $usuario->id_usuario; ?>" <?= $usuario->id_usuario == $viaje->id_usuario ? ' selected="selected"' : ''; ?>>
+                    <?= $usuario->nombre; ?>
+                </option>
+            <?php } ?>
+        </select>
+
+    </div>
+    <button class="btn btn-warning" type="submit">Actualizar</button>
+</form>
+<?php require_once 'templates/Footer.phtml'; ?>

@@ -1,0 +1,17 @@
+<?php require_once 'templates/Header.phtml'; ?>
+
+<form action="ActualizarUsuario/<?= $usuarios->id_usuario; ?>" method="post" required>
+    <label for="nombre">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $usuarios->nombre; ?>" required>
+
+    <label class="form-label" for="apellido">Apellido:</label>
+    <input type="text" class="form-control" id="apellido" name="apellido" value="<?= $usuarios->apellido; ?>" required>
+
+
+    <label for="gmail">Correo Electronico:</label>
+    <input type="email" class="form-control" id="gmail" name="gmail" value="<?= $usuarios->gmail; ?>" required>
+
+    
+    <button class="btn btn-success" type="submit">Actualizar Usuario</button>
+</form>
+<?php require_once 'templates/Footer.phtml'; ?>
